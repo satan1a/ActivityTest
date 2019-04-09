@@ -8,6 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.RatingBar;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 public class FirstActivity extends AppCompatActivity {
@@ -74,7 +77,75 @@ public class FirstActivity extends AppCompatActivity {
         });
 
 
+//        点击后显示一个Toast消息弹框
+        Button buttonToast = (Button) findViewById(R.id.buttonToast);
+        buttonToast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(FirstActivity.this, "Toast taste good!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button buttonRadioButtonTest = (Button) findViewById(R.id.radioButtonActive);
+        buttonRadioButtonTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, RadioButtonTest.class);
+                startActivity(intent);
+            }
+        });
+
+//        点击后显示文本编辑框
+        Button  buttonText = (Button) findViewById(R.id.textEditButton);
+        buttonText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, TextEditActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//            点击后显示RatingBar
+        Button ratingBarButton = (Button) findViewById(R.id.ratingBarButton);
+        ratingBarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, RatingBarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//             点击后显示TimePicker
+        Button timePickerButton = (Button) findViewById(R.id.timePickerButton);
+        timePickerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, TimePickerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//              点击后显示TimePicker
+        Button processPickerButton = (Button) findViewById(R.id.progressBarButton);
+        processPickerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, ProcessBarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//              点击后显示TimePicker
+        Button webViewButton = (Button) findViewById(R.id.webViewButton);
+        webViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, WebViewActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
 
 

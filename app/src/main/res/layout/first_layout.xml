@@ -28,5 +28,47 @@
         android:layout_height="wrap_content"
         android:text="My Website"
         />
+    <Button
+        android:id="@+id/buttonToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toast Here🍞"
+        />
 
+    <Button
+        android:id="@+id/radioButtonActive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Radio Button Test"
+        />
+    <Button
+        android:id="@+id/textEditButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Text Edit Test"
+        />
+    <Button
+        android:id="@+id/ratingBarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rating Bar Text"
+        />
+    <Button
+        android:id="@+id/timePickerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rating Bar Text"
+        />
+    <Button
+        android:id="@+id/progressBarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time Picker Text"
+        />
+    <Button
+        android:id="@+id/webViewButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Website"
+        />
 </LinearLayout>
