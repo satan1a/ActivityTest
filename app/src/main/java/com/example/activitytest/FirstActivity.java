@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
@@ -33,11 +34,11 @@ public class FirstActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ------以下为隐式Intent------
+//                ------以下为隐式（Implicit）Intent------
                 Intent intent = new Intent("com.example.activityest.ACTION_START");
                 intent.addCategory("com.example.activityest.MY_CATEGORY");
                 startActivity(intent);
-//                ------以下为显式Intent------
+//                ------以下为显式（Explicit）Intent------
 //                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
 //                startActivity(intent);
             }
@@ -45,10 +46,21 @@ public class FirstActivity extends AppCompatActivity {
 
         // 自己添加一个新的按钮测试
         Button button2 = (Button) findViewById(R.id.button_2);
+        Intent intentButton2 = getIntent();
+        String dataFromSecondActivity = intentButton2.getStringExtra("extra_data_1");
+        if (dataFromSecondActivity != null) {
+            Toast.makeText(FirstActivity.this, "Data from ThirdActivity: " + dataFromSecondActivity, Toast.LENGTH_SHORT).show();
+        }
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(FirstActivity.this, "You click Button2 🐱", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(FirstActivity.this, "从当前活动传输信息到Third Activity", Toast.LENGTH_SHORT).show();
+                // 从当前活动传输信息到Third Activity，利用Intent
+                String data = "Hello Third Activity";
+                Intent intent = new Intent(FirstActivity.this, ThirdActivity.class);
+                // 放入数据：putExtra方法接收两个参数，第一个是键，用于后面从intent取值；第二个为真正要传的数据
+                intent.putExtra("extra_data", data);
+                startActivity(intent);
             }
         });
 
@@ -85,6 +97,9 @@ public class FirstActivity extends AppCompatActivity {
                 Toast.makeText(FirstActivity.this, "Toast taste good!", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+//        分割线
 
         Button buttonRadioButtonTest = (Button) findViewById(R.id.radioButtonActive);
         buttonRadioButtonTest.setOnClickListener(new View.OnClickListener() {
@@ -144,7 +159,40 @@ public class FirstActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+//             ViewStub Test
+        Button viewStubButton = (Button) findViewById(R.id.viewStubButton);
+        viewStubButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, ViewStubActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+//             ImageSwitcher Test
+        Button imageSwitcherButton = (Button) findViewById(R.id.imageSwitcherButton);
+        imageSwitcherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, ImageSwitcherActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //            ImageSwitcher Test
+        Button imageSliderButton = (Button) findViewById(R.id.imageSliderButton);
+        imageSliderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, ImageSliderActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
 
 

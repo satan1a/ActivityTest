@@ -26,7 +26,7 @@
         android:id="@+id/buttonMyWebsite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Website"
+        android:text="Intent Call Test"
         />
     <Button
         android:id="@+id/buttonToast"
@@ -34,6 +34,8 @@
         android:layout_height="wrap_content"
         android:text="Toast Here🍞"
         />
+
+<!--分割线-->
 
     <Button
         android:id="@+id/radioButtonActive"
@@ -51,24 +53,54 @@
         android:id="@+id/ratingBarButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rating Bar Text"
+        android:text="Rating Bar Test"
         />
     <Button
         android:id="@+id/timePickerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rating Bar Text"
+        android:text="Time Picker Test"
         />
     <Button
         android:id="@+id/progressBarButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Time Picker Text"
+        android:text="Process Bar Test"
         />
     <Button
         android:id="@+id/webViewButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="My Website"
+        />
+    <Button
+        android:id="@+id/viewStubButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ViewStub Test"
+        />
+    <Button
+        android:id="@+id/imageSwitcherButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ImageSwitcher Test"
+        />
+    <Button
+        android:id="@+id/imageSliderButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ImageSlider Test"
+        />
+    <Button
+        android:id="@+id/scrollViewButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ScrollView Test"
+        />
+    <Button
+        android:id="@+id/etWithTwButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ET with TW Test"
         />
 </LinearLayout>
