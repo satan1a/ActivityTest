@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -18,6 +20,9 @@ public class SecondActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                Animation animationSlideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
+//                animationSlideDown.start();
                 Intent intent = new Intent(SecondActivity.this, FirstActivity.class);
                 startActivity(intent);
             }

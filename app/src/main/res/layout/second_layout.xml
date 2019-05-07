@@ -9,5 +9,9 @@
         android:layout_height="wrap_content"
         android:text="Button3"
         />
+    <scale
+        />
+
+
 
 </LinearLayout>

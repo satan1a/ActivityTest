@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -22,15 +25,59 @@ public class ThirdActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.third_layout);
-        Button button4 = (Button)findViewById(R.id.button_4);
-        button4.setOnClickListener(new View.OnClickListener() {
+        final ImageView imageView = (ImageView)findViewById(R.id.imageView1);
+        Button buttonSlideUp = (Button)findViewById(R.id.button_slide_up);
+        Button buttonSlideDown = (Button)findViewById(R.id.button_slide_down);
+        Button buttonFadeIn = (Button)findViewById(R.id.button_fade_in);
+        Button buttonFadeOut = (Button)findViewById(R.id.button_fade_out);
+        Button buttonRotateClockWise = (Button)findViewById(R.id.button_rotate_clockwise);
+
+        buttonSlideUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ThirdActivity.this, FirstActivity.class);
-                intent.putExtra("extra_data_1", "Hello, FirstActivity");
-                startActivity(intent);
+                // Slide_Up
+                Animation animationSlideUp = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
+
+                imageView.startAnimation(animationSlideUp);
             }
         });
+        buttonSlideDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Slide_Down
+                Animation animationSlideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
+
+                imageView.startAnimation(animationSlideDown);
+            }
+        });
+        buttonFadeIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Fade In
+                Animation animationSlideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+
+                imageView.startAnimation(animationSlideDown);
+            }
+        });
+        buttonFadeOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Fade Out
+                Animation animationSlideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out);
+
+                imageView.startAnimation(animationSlideDown);
+            }
+        });
+        buttonRotateClockWise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Rotate CloseWise
+                Animation animationSlideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_clockwise);
+
+                imageView.startAnimation(animationSlideDown);
+            }
+        });
+
 
     }
 }
